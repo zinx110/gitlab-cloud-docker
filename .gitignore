@@ -1,0 +1,26 @@
+# Sensitive environment files
+.env
+
+# GitLab data and configuration
+data/
+logs/
+config/
+
+# Docker volumes
+*.tar.gz
+backup/
+
+# SSH keys
+*.pem
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

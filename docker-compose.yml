@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  gitlab:
+    image: gitlab/gitlab-ee:nightly
+    container_name: gitlab
+    hostname: gitlab.local
+    restart: always
+    ports:
+      - "8929:80" # HTTP -> avoid port 80 conflicts
+      - "2222:22" # SSH -> avoid port 22 conflicts
+    volumes:
+      - ./config:/etc/gitlab
+      - ./logs:/var/log/gitlab
+      - ./data:/var/opt/gitlab
+    environment:
+      GITLAB_ROOT_PASSWORD: ${INITIAL_PASSWORD}
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url "http://${EXTERNAL_IP:-localhost}:8929"
+        nginx['listen_port'] = 80
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        
+        # Optimize for 4GB RAM
+        puma['worker_processes'] = 4
+        sidekiq['max_concurrency'] = 20
+        postgresql['shared_buffers'] = "512MB"
+        prometheus_monitoring['enable'] = true
+
