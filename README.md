@@ -365,5 +365,3 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **GitLab Cloud Docker** - Simple self-hosted GitLab setup for cloud deployments
-
-# gitlab-cloud-docker
