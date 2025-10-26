@@ -9,7 +9,7 @@ Self-hosted GitLab Enterprise Edition (EE) using Docker Compose. Works on AWS EC
 - **Memory optimized** - Runs well on 4GB RAM
 - **Environment-based configuration** - Easy IP and password management
 - **Token creation script** - Bypass web UI bugs
-- **Cloud-ready** - Works on AWS EC2, DigitalOcean, etc.
+- **Cloud deployment** - Works on AWS EC2, DigitalOcean, etc.
 - **Custom ports** - Uses port 8929/2222 to avoid conflicts
 
 ## 📋 Prerequisites
@@ -348,7 +348,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - This uses GitLab EE **nightly builds** - expect bugs and breaking changes
 - All EE features work without a license (you'll just see an "unlicensed" banner)
-- Not recommended for critical production workloads
 - Good for testing, learning, small teams, and personal projects
 
 ## 💬 Support
@@ -367,3 +366,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **GitLab Cloud Docker** - Simple self-hosted GitLab setup for cloud deployments
 
+# gitlab-cloud-docker
